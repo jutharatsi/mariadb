@@ -2,7 +2,7 @@ version: '3'
 
 services:
   wkc-mariadb:
-    container_name: wkc-mariadb
+    container_name: docker-mariadb
     image: mariadb:bionic
     ports:
       - 3306:3306

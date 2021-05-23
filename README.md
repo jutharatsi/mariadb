@@ -1,6 +1,6 @@
-# wkc-mariadb
+# docker-mariadb
 
 docker-compose up -d
-docker exec -it wkc-mariadb bash
+docker exec -it docker-mariadb bash
 mysql
 create user 'root'@'%' identified by 'password';
