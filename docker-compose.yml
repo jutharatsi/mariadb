@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  wkc-mariadb:
+    container_name: wkc-mariadb
+    image: mariadb:bionic
+    ports:
+      - 3306:3306
+    volumes: 
+      - ./db:/var/lib/mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=password
+      - "MYSQL_ROOT_HOST=%"
+    command:
+      - '--character-set-server=utf8mb4'
+      - '--collation-server=utf8mb4_unicode_ci'
+      - '--bind-address=0.0.0.0'
+    networks:
+      - network-wkc
+
+networks:
+  network-wkc:
+    external: false
+    name: network-wkc
